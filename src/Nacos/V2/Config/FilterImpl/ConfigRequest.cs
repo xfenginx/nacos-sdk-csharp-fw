@@ -29,6 +29,10 @@
 
         public void SetType(string type) => param[ConfigConstants.TYPE] = type;
 
+        public string GetEncryptedDataKey() => param.SafeGetValue(ConfigConstants.ENCRYPTED_DATA_KEY, null);
+
+        public void SetEncryptedDataKey(string encryptedDataKey) => param[ConfigConstants.ENCRYPTED_DATA_KEY] = encryptedDataKey;
+
         public object GetParameter(string key) => param.TryGetValue(key, out var obj) ? obj : null;
 
         public IConfigContext GetConfigContext() => configContext;
