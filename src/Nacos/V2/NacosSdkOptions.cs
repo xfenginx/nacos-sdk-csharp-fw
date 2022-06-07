@@ -13,11 +13,22 @@
         public List<string> ServerAddresses { get; set; }
 
         /// <summary>
-        /// EndPoint
+        /// address server endpoint, provides nacos server address
         /// </summary>
+        /// <example>
+        /// http://10.1.12.123:8080 or https://10.1.12.123:443
+        /// </example>
         public string EndPoint { get; set; }
 
+        /// <summary>
+        /// the context path of nacos server, http://localhost:8848/${ContextPath}
+        /// </summary>
         public string ContextPath { get; set; } = "nacos";
+
+        /// <summary>
+        /// the nodes path to query nacos server address, used by endpoint way
+        /// </summary>
+        public string NodesPath { get; set; } = "serverlist";
 
         /// <summary>
         /// default timeout, unit is Milliseconds.

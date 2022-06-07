@@ -173,5 +173,15 @@
         {
             _refreshServerListTimer?.Dispose();
         }
+
+        public string GetName()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetNamespace()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

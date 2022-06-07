@@ -16,6 +16,16 @@
 
         public string GetCurrentServer() => _serverListManager.GetCurrentServerAddr();
 
+        public string GetName()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public string GetNamespace()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public List<string> GetServerList() => _serverListManager.GetServerUrls();
     }
 }
