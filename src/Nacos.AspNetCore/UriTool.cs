@@ -37,6 +37,8 @@ namespace Nacos.AspNetCore
             // 2. IServerAddressesFeature
             if (features != null)
             {
+                Console.WriteLine("IServerAddressesFeature");
+
                 var addresses = features.Get<IServerAddressesFeature>();
                 var addressCollection = addresses?.Addresses;
 
@@ -57,6 +59,8 @@ namespace Nacos.AspNetCore
             address = Environment.GetEnvironmentVariable("ASPNETCORE_URLS");
             if (!string.IsNullOrWhiteSpace(address))
             {
+                Console.WriteLine("ASPNETCORE_URLS");
+
                 var url = ReplaceAddress(address, preferredNetworks);
 
                 var uris = url.Split(splitChars).Select(x => new Uri(x));
@@ -76,6 +80,8 @@ namespace Nacos.AspNetCore
             var cmdArgs = Environment.GetCommandLineArgs();
             if (cmdArgs != null && cmdArgs.Any())
             {
+                Console.WriteLine("--urls");
+
                 var cmd = cmdArgs.FirstOrDefault(x => x.StartsWith("--urls", StringComparison.OrdinalIgnoreCase));
 
                 if (!string.IsNullOrWhiteSpace(cmd))

@@ -52,6 +52,8 @@
 
             uris = UriTool.GetUri(_features, _options.Ip, _options.Port, _options.PreferredNetworks);
 
+            Console.WriteLine(string.Join(',', uris));
+
             var metadata = new Dictionary<string, string>()
             {
                 { PreservedMetadataKeys.REGISTER_SOURCE, $"ASPNET_CORE" },
